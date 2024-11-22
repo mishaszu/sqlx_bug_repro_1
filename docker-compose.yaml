@@ -1,0 +1,15 @@
+version: "3.3"
+services:
+  pg-db1:
+    image: postgres:latest
+    restart: always
+    ports:
+      - "15432:5432"
+    environment:
+      POSTGRES_PASSWORD: "dev_only_pwd"
+      POSTGRES_DB: "test_enum"
+    volumes:
+      - v_data:/var/lib/postgresql/data
+
+volumes:
+  v_data:
